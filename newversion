@@ -1,0 +1,25 @@
+// ==UserScript==
+// @name         AutoWaxApprove
+// @namespace    http://tampermonkey.net/
+// @version      2.0
+// @description  try to take over the world!
+// @author       Jkmat032
+// @match        https://all-access.wax.io/cloud-wallet/signing/
+// @grant        none
+// ==/UserScript==
+
+window.onload =(function Approve() {
+
+    let checkBox=document.getElementsByClassName("jss44")[0];
+    if(checkBox!=null && checkBox.checked==false)
+        checkBox.click();
+
+    let approveButton = document.getElementsByClassName("button button-secondary button-large text-1-5rem text-bold mx-1")[0];
+    if(approveButton!=null)
+    {
+        approveButton.click();
+        return;
+    }
+
+        setTimeout(Approve, 2);
+})();
